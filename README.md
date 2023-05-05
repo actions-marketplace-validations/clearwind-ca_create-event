@@ -2,6 +2,7 @@ A GitHub Action to easily create an event on a [Service Catalog](https://github.
 
 ## Usage
 
+```yaml
     - uses: clearwind-ca/create-event@v1
       env:
         SERVICE_CATALOG_TOKEN: ${{ secrets.SERVICE_CATALOG_TOKEN }}
@@ -10,6 +11,7 @@ A GitHub Action to easily create an event on a [Service Catalog](https://github.
         name: A test deployment
         type: Deployment
         source: GitHub Action
+```
 
 ## Required secrets
 
@@ -40,3 +42,15 @@ If the file is not present and no value is set then the following inputs will us
 |`source`|No||The source of the event|
 |`url`|No||The URL of the event|
 |`active`|No|True|If the event is active. Use `false` to make the event inactive.|
+
+## Example file:
+
+```json
+{
+    "name": "Test",
+    "start": "2023-05-05T18:43:19.658Z",
+    "type": "Test Event",
+    "description": "This is a test event",
+    "active": true
+}
+```
