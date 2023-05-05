@@ -2,7 +2,7 @@ A GitHub Action to easily create an event on a [Service Catalog](https://github.
 
 ## Usage
 
-    - uses: clearwind-ca/create-event@main
+    - uses: clearwind-ca/create-event@v1
       env:
         SERVICE_CATALOG_TOKEN: ${{ secrets.SERVICE_CATALOG_TOKEN }}
       with:
@@ -11,14 +11,15 @@ A GitHub Action to easily create an event on a [Service Catalog](https://github.
         type: Deployment
         source: GitHub Action
 
+## Required secrets
 
-### Required secrets
+This secret must exist so that it can authenticate with the Service Catalog.
 
 |Name|Required|Value|
 |-|-|-|
 |`SERVICE_CATALOG_TOKEN`|Yes|A valid API token for your Service Catalog server|
 
-### Inputs
+## Inputs
 
 |Name|Required|Default|Value|
 |-|-|-|-|
