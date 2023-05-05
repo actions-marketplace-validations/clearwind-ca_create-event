@@ -1,0 +1,44 @@
+name: 'Service Catalog: Create Event'
+description: 'Creates an event in the the catalog'
+inputs:
+  catalog_url:
+    description: 'The URL of the catalog'
+    required: true
+  name:
+    description: 'The name of the event'
+    required: false
+  start:
+    description: 'The start of the event'
+    required: false
+  end:
+    description: 'The end of the event'
+    required: false
+  type:
+    description: 'The type of the event'
+    required: false
+  description:
+    description: 'The description of the event'
+    required: false
+  external_id:
+    description: 'An external id of the event'
+    required: false
+  source:
+    description: 'The source of the event'
+    required: false
+  active:
+    description: 'Whether the event is active'
+    required: false
+    default: true
+  url:
+    description: 'A URL for the event'
+    required: false
+  result:
+    description: 'The filename of the result'
+    required: false
+    default: '/tmp/service-catalog-result.json'
+runs:
+  using: 'node16'
+  main: 'event.js'
+branding:
+  icon: 'cloud-snow'
+  color: 'orange'

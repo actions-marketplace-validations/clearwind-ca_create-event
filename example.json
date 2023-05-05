@@ -1,0 +1,7 @@
+{ 
+    "name": "Test",
+    "start": "2023-05-05T18:43:19.658Z",
+    "type": "Test Event",
+    "description": "This is a test event",
+    "active": true
+}
