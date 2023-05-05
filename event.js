@@ -4,11 +4,18 @@ const querystring = require('querystring');
 
 let catalog = process.env.INPUT_CATALOG_URL;
 let result = {}
-// If you've specified a JSON file with all the data, let's use that.
+let parsedFile = false;
+
+// If the filename exists use that, if not use the inputs.
 if (process.env.INPUT_RESULT) {
   console.log(`Reading ${process.env.INPUT_RESULT}`)
-  result = JSON.parse(fs.readFileSync(process.env.INPUT_RESULT, 'utf8'));
-} else {
+  if (fs.existsSync(process.env.INPUT_RESULT)) {
+    result = JSON.parse(fs.readFileSync(process.env.INPUT_RESULT, 'utf8'));
+    parsedFile = true;
+  }
+}
+
+if (!parsedFile) {
   // Otherwise, let's use the individual inputs.
   console.log(`Using individual inputs.`)
   result = {

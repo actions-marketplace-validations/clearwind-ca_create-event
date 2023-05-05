@@ -35,7 +35,7 @@ inputs:
   result:
     description: 'The filename of the result'
     required: false
-    default: '/tmp/service-catalog-result.json'
+    default: '/tmp/service-catalog-event.json'
 runs:
   using: 'node16'
   main: 'event.js'
