@@ -49,8 +49,7 @@ const req = https.request(options, (res) => {
   res.on('data', (data) => {
     console.log(`Got a response ${res.statusCode} from the server.`)
     if (res.statusCode != 201) {
-      let parsed = JSON.parse(data);
-      console.log(`Error: ${parsed.message} ${data}`);
+      console.log(`Error: ${data}`);
       process.exit(1);
     } else {
       console.log('Posted successfully.');
