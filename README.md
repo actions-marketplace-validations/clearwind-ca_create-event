@@ -43,7 +43,7 @@ If the file is not present and no value is set then the following inputs will us
 |`url`|No||The URL of the event|
 |`active`|No|True|If the event is active. Use `false` to make the event inactive.|
 
-## Example file:
+## Example file
 
 ```json
 {
