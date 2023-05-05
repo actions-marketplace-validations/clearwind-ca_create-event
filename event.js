@@ -6,9 +6,11 @@ let catalog = process.env.INPUT_CATALOG_URL;
 let result = {}
 // If you've specified a JSON file with all the data, let's use that.
 if (process.env.INPUT_RESULT) {
+  console.log(`Reading ${process.env.INPUT_RESULT}`)
   result = JSON.parse(fs.readFileSync(process.env.INPUT_RESULT, 'utf8'));
 } else {
   // Otherwise, let's use the individual inputs.
+  console.log(`Using individual inputs.`)
   result = {
     "name": process.env.INPUT_NAME,
     "start": process.env.INPUT_START,
@@ -41,7 +43,6 @@ const req = https.request(options, (res) => {
     console.log(`Got a response ${res.statusCode} from the server.`)
     if (res.statusCode != 201) {
       let parsed = JSON.parse(data);
-      
       console.log(`Error: ${parsed.message} ${data}`);
       process.exit(1);
     } else {
