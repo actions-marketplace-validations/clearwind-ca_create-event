@@ -32,8 +32,8 @@ inputs:
   url:
     description: 'A URL for the event'
     required: false
-  result:
-    description: 'The filename of the result'
+  event_file:
+    description: 'The filename of the event data to send'
     required: false
     default: '/tmp/service-catalog-event.json'
 runs:

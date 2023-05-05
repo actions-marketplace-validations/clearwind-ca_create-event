@@ -7,10 +7,10 @@ let result = {}
 let parsedFile = false;
 
 // If the filename exists use that, if not use the inputs.
-if (process.env.INPUT_RESULT) {
-  console.log(`Reading ${process.env.INPUT_RESULT}`)
-  if (fs.existsSync(process.env.INPUT_RESULT)) {
-    result = JSON.parse(fs.readFileSync(process.env.INPUT_RESULT, 'utf8'));
+if (process.env.INPUT_EVENT_FILE) {
+  console.log(`Reading ${process.env.INPUT_EVENT_FILE}`)
+  if (fs.existsSync(process.env.INPUT_EVENT_FILE)) {
+    result = JSON.parse(fs.readFileSync(process.env.INPUT_EVENT_FILE, 'utf8'));
     parsedFile = true;
   }
 }
@@ -27,7 +27,7 @@ if (!parsedFile) {
     "external_id": process.env.INPUT_EXTERNAL_ID,
     "source": process.env.INPUT_SOURCE,
     "url": process.env.INPUT_URL,
-    "active": process.env.INPUT_ACTIVE || true,
+    "active": process.env.INPUT_ACTIVE === undefined ? true : process.env.INPUT_ACTIVE
   }
 }
 
